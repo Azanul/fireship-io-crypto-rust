@@ -1,10 +1,9 @@
-use crypto::digest::Digest;
-use crypto::sha2::Sha256;
+use sha2::{Sha256, Digest};
 
 pub fn hash(pass: String) -> String {
     let mut hasher = Sha256::new();
 
-    hasher.input_str(&pass);
+    hasher.update(&pass);
 
-    hasher.result_str()
+    hex::encode(hasher.finalize())
 }
