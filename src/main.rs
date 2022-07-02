@@ -1,6 +1,6 @@
 pub mod hash;
 pub mod salt;
-// pub mod hmac;
+pub mod hmac;
 // #[path="../src/symmetric-encrypt.rs"]
 // pub mod symmetric_encrypt;
 
@@ -19,5 +19,5 @@ fn main() {
     println!("{}", salt::signup(format!("{}@email.com", line.trim_end()), line.clone()));
     println!("{}", salt::login(format!("{}@email.com", line.trim_end()), line.clone()));
 
-    // hmac::hmac();
+    hmac::hmac();
 }
