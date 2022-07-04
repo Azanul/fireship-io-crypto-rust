@@ -3,6 +3,7 @@ pub mod salt;
 pub mod hmac;
 #[path="../src/symmetric-encrypt.rs"]
 pub mod symmetric_encrypt;
+pub mod argon2;
 
 extern crate hex;
 

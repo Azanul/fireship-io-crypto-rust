@@ -14,10 +14,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "argon2"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "db4ce4441f99dbd377ca8a8f57b698c44d0d6e712d8329b5040da5a64aa1ce73"
+dependencies = [
+ "base64ct",
+ "blake2",
+ "password-hash",
+]
+
+[[package]]
 name = "base64ct"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3bdca834647821e0b13d9539a8634eb62d3501b6b6c2cec1722786ee6671b851"
+
+[[package]]
+name = "blake2"
+version = "0.10.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9cf849ee05b2ee5fba5e36f97ff8ec2533916700fc0758d40d92136a42f3388"
+dependencies = [
+ "digest",
+]
 
 [[package]]
 name = "block-buffer"
@@ -97,9 +117,11 @@ name = "fireship-io-crypto-rust"
 version = "0.1.0"
 dependencies = [
  "aes",
+ "argon2",
  "cbc",
  "hex",
  "hmac",
+ "rand_core",
  "scrypt",
  "serde",
  "serde_json",
