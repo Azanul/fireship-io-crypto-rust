@@ -4,6 +4,8 @@ pub mod hmac;
 #[path="../src/symmetric-encrypt.rs"]
 pub mod symmetric_encrypt;
 pub mod argon2;
+#[path="../src/asymmetric-encrypt.rs"]
+pub mod asymmetric_encrypt;
 
 extern crate hex;
 
@@ -22,5 +24,7 @@ fn main() {
 
     // hmac::hmac();
 
-    symmetric_encrypt::encrypt();
+    // symmetric_encrypt::encrypt();
+
+    asymmetric_encrypt::encrypt();
 }
