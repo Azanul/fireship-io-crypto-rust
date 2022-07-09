@@ -6,6 +6,7 @@ pub mod symmetric_encrypt;
 pub mod argon2;
 #[path="../src/asymmetric-encrypt.rs"]
 pub mod asymmetric_encrypt;
+pub mod sign;
 
 extern crate hex;
 
@@ -26,5 +27,7 @@ fn main() {
 
     // symmetric_encrypt::encrypt();
 
-    asymmetric_encrypt::encrypt();
+    // asymmetric_encrypt::encrypt();
+
+    sign::sign();
 }
