@@ -1,21 +1,20 @@
-pub mod hash;
-pub mod salt;
-pub mod hmac;
-#[path="../src/symmetric-encrypt.rs"]
-pub mod symmetric_encrypt;
 pub mod argon2;
-#[path="../src/asymmetric-encrypt.rs"]
+#[path = "../src/asymmetric-encrypt.rs"]
 pub mod asymmetric_encrypt;
+pub mod hash;
+pub mod hmac;
+pub mod salt;
 pub mod sign;
+#[path = "../src/symmetric-encrypt.rs"]
+pub mod symmetric_encrypt;
 
 extern crate hex;
 
-
 fn main() {
     // let mut line = String::new();
-   
+
     // println!("Enter a string :");
-   
+
     // let _b1 = std::io::stdin().read_line(&mut line).unwrap();
 
     // println!("{}", hash::hash(line.clone()));

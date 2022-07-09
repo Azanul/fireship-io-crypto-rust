@@ -13,8 +13,26 @@ pub fn sign() {
     hasher.update(&message);
     let hashed = hasher.finalize();
 
-    let signed = private_key.sign(PKCS1v15Sign {hash: Some(SHA2_256)}, &hashed).unwrap();
+    let signed = private_key
+        .sign(
+            PKCS1v15Sign {
+                hash: Some(SHA2_256),
+            },
+            &hashed,
+        )
+        .unwrap();
     println!("{}", hex::encode(&signed));
 
-    println!("{}", public_key.verify(PKCS1v15Sign {hash: Some(SHA2_256)}, &hashed, &signed).is_ok());
+    println!(
+        "{}",
+        public_key
+            .verify(
+                PKCS1v15Sign {
+                    hash: Some(SHA2_256)
+                },
+                &hashed,
+                &signed
+            )
+            .is_ok()
+    );
 }
